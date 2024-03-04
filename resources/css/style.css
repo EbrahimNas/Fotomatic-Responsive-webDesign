@@ -103,7 +103,7 @@ header .icon {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (min-width: 481px) and (max-width: 760px) {
   header .desktop {
     display: none;
   }
@@ -124,6 +124,7 @@ header .icon {
 
   header .content {
     height: 4.5rem;
+    margin-bottom: 0;
   }
 
   header .tablet .button {
@@ -137,22 +138,64 @@ header .icon {
     padding-right: 1rem;
   }
 
+}
 
+@media screen and (max-width: 430px) {
+  
+  header .desktop {
+    display: none;
+  }
 
+  header .tablet {
+    display: none;
+  }
 
-  /*header .content {
-    padding: .5rem 0;
+  header .logo {
+    display: none;
+  }
+
+  header {
+    width: auto;
+    position: fixed;
+  }
+
+  header .content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 3rem;
+    
+  }
+
+  header .mobile {
+    margin: 0;
+    display: flex;
+    width: 26.875rem;
+    flex: 1;
+    align-items: center;
   }
 
   header .mobile ul {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    padding: 0;
     width: 100%;
+    margin: 0 1rem;
   }
 
   header .mobile li {
     padding: 0;
+    width: 100%;
+  }
+
+  header .mobile img {
+    vertical-align: sub;
+  }
+
+  header .mobile .btn {
+    display: flex;
+    justify-content: end;
+    max-width: 3.9rem;
   }
 
   header .mobile .button {
@@ -160,7 +203,9 @@ header .icon {
     background-color: #9dc20b;
     line-height: 1.6;
     color: white;
-  }*/
+  }
+
+
 }
 
 /* Sign Up Section */
@@ -229,6 +274,11 @@ header .icon {
 }
 
 @media only screen and (max-width: 760px) {
+  
+  .main-content {
+    top: 4.5625rem;
+  }
+  
   #sign-up-section {
     align-items: center;
     justify-content: center;
@@ -257,24 +307,45 @@ header .icon {
 
   #sign-up-cta h1 {
     font-size: 3.125rem;
+    padding-bottom: 0;
   }
 
   #sign-up-cta h2 {
     font-size: 2.25rem;
+    margin-top: 0;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 430px) {
+
+  .main-content {
+    top: 3.0625rem;
+  }
+
+  #sign-up-section {
+    align-items: center;
+    justify-content: center;
+    height: 28rem;
+    background-size: cover;
+    background-position: right;
+  }
+
   #sign-up-section {
     height: 20rem;
   }
 
   #sign-up-cta h1 {
     font-size: 2.25rem;
+    padding-bottom: 0;
   }
 
   #sign-up-cta h2 {
     font-size: 2rem;
+    margin-top: 0;
+  }
+
+  #sign-up-cta .email {
+    display: none;
   }
 }
 
@@ -389,6 +460,58 @@ header .icon {
   }
 }
 
+@media only screen and (max-width: 430px) {
+  #features-section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #features-section .one {
+    background-color: #f3f3f3;
+  }
+
+  .feature {
+    margin: 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .feature .image-container {
+    position: relative;
+    width: 25rem; /* Set the width of the container */
+    height: 11rem; /* Set the height of the container */
+    overflow: hidden; 
+  }
+
+  .feature .image-container img {
+    position: absolute;
+    top: -30px; /* Adjust this value to position the image vertically */
+    left: auto; /* Adjust this value to position the image horizontally */
+    width: 100%; /* Let the width adjust automatically */
+    height: auto; /* Let the height adjust automatically */
+    max-width: none; /* Disable max-width to prevent resizing */
+    max-height: none;
+  }
+
+  .feature .content {
+    margin: 2rem auto;
+  }
+
+  .feature h3 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .feature h2 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+}
+
 
 /* Filters Section */
 
@@ -422,7 +545,7 @@ header .icon {
 #filters-section .images-container {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 0 auto;
   justify-content: center;
 }
@@ -466,11 +589,12 @@ header .icon {
   }
 
   #filters-section .images-container {
-    width: 100%;
+    max-width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 0;
     justify-content: center;
+    height: auto;
   }
 
   .images-container .image-container {
@@ -481,10 +605,63 @@ header .icon {
   }
 
   .images-container img {
-    width: 11.8rem;
+    width: 11.6rem;
   }
 
 }
+
+@media only screen and (max-width: 430px) {
+  #filters-section {
+    padding: 2rem 0 0 0;
+  }
+
+  #filters-section .content {
+    margin: 0 auto;
+    padding: 0 2.8rem;
+  }
+
+  #filters-section .content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin: 0 auto;
+    line-height: 1.4;
+    padding-top: 0;
+  }
+
+  #filters-section .content h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  #filters-section .images-container {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    justify-content: center;
+    height: auto;
+  }
+
+  .images-container .image-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+
+  .images-container img {
+    width: 12rem;
+  }
+
+}
+
 
 /* Quotes Section */
 
@@ -528,6 +705,28 @@ header .icon {
     margin: auto;
     vertical-align: text-top;
     padding-right: .5rem;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  #quotes-section .content {
+    padding: 1.875rem 3.8rem;
+    text-align:center;
+    display: block;
+  }
+
+  #quotes-section .quote {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding: 0;
+  }
+
+  #quotes-section .quote-citation {
+    display: block;
+    margin: auto;
+    vertical-align: text-top;
+    padding: 0;
+    margin-top: 1.25rem;
   }
 }
 
